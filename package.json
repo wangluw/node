@@ -1,0 +1,19 @@
+{
+  "name": "copy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "excel-export": "0.4.1",
+    "export": "^0.1.337",
+    "express": "^4.16.2",
+    "node-xlrd": "0.2.4",
+    "xlsx": "^0.12.4",
+    "zlib": "^1.0.5"
+  }
+}
