@@ -27,3 +27,6 @@ var os = require("os");
 // 返回一个对象数组，包含所安装的每个 CPU/内核的信息：型号、速度（单位 MHz）、时间（一个包含 user、nice、sys、idle 和 irq 所使用 CPU/内核毫秒数的对象）。
 // 13	os.networkInterfaces()
 // 获得网络接口列表。
+
+// os.EOL
+// 定义了操作系统的行尾符的常量。

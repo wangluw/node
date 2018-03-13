@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input{border: 1px solid #5e5e5e}
+    </style>
+    <script src="../jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <table class="userList">
+        <tbody>
+            <tr>
+                <th>name</th>
+                <th>password</th>
+                <th>profession</th>
+                <th>id</th>
+            </tr>
+        </tbody>
+    </table>
+    <form action="http://127.0.0.1:8081/adduser" method="GET">
+        name:<input typeof="text" name="name" /><br>
+        password:<input typeof="text" name="password" /><br>
+        profession:<input typeof="text" name="profession" /><br>
+        <span style="display:none;">id:<input typeof="text" name="id"   class="id" /></span><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+<script>
+    $.ajax({
+        url : "http://127.0.0.1:8081/getuserlist",
+        method : "GET",
+        dataType : "json",
+        success : function (data) {
+            var datamsg;
+            var num = 0;
+            $.each(data,function (i,item) {
+                num++;
+                datamsg += "<tr>";
+                $.each(item,function (i,item) {
+                    datamsg += "<td>"+item+"</td>";
+                })
+                datamsg += "</tr>";
+
+            })
+            $(".id").val(num+1);
+            $(".userList").children("tbody").append(datamsg)
+        }
+    })
+</script>
+</html>
